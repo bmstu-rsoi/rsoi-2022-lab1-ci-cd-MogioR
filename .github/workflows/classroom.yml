@@ -15,13 +15,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Download dependencies
+      #- name: Download dependencies
       # There could be a dependencies here, but create BD here it's too much time.
 
-      - name: Build
+      #- name: Build
       # There could be a build here, but it's python.
 
-      - name: Unit tests
+      #- name: Unit tests
       # There could be a test here, but there is nothing to test without a database,
       # (except for the validation function...)
 
