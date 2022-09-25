@@ -15,7 +15,29 @@ jobs:
         with:
           fetch-depth: 0
 
-      # TODO build, test and deploy project
+      - name: Download dependencies
+      # There could be a dependencies here, but create BD here it's too much time.
+
+      - name: Build
+      # There could be a build here, but it's python.
+
+      - name: Unit tests
+      # There could be a test here, but there is nothing to test without a database,
+      # (except for the validation function...)
+
+      - name: Deploy
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "mogior-rsoi-1"
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          usedocker: true
+
+      - name: Sleep for 30s
+        # Time for deploy
+        uses: juliangruber/sleep-action@v1
+        with:
+          time: 30
 
       - name: Run API Tests
         uses: matt-ball/newman-action@master
